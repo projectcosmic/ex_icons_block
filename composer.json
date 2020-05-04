@@ -1,0 +1,9 @@
+{
+    "name": "projectcosmic/ex_icons_block",
+    "description": "Extends the External-use Icons into Drupal blocks.",
+    "type": "drupal-module",
+    "require": {
+        "drupal/core": "^8 || ^9",
+        "drupal/ex_icons": "^1.0@RC"
+    }
+}
