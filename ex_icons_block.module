@@ -52,10 +52,12 @@ function ex_icons_block_block_builder($entity_type, BlockInterface $block, $form
  * Implements hook_preprocess_HOOK() for block.html.twig.
  */
 function ex_icons_block_preprocess_block(&$variables) {
-  $variables['title_icon'] = \Drupal::entityTypeManager()
-    ->getStorage('block')
-    ->load($variables['elements']['#id'])
-    ->getThirdPartySetting('ex_icons_block', 'title_icon');
+  if (isset($variables['elements']['#id'])) {
+    $variables['title_icon'] = \Drupal::entityTypeManager()
+      ->getStorage('block')
+      ->load($variables['elements']['#id'])
+      ->getThirdPartySetting('ex_icons_block', 'title_icon');
+  }
 }
 
 /**
